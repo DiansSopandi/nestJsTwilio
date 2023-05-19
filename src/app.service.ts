@@ -23,11 +23,11 @@ export class AppService {
 
   async sendSMS() {
     return this.twilioService.client.messages.create({
-      body: '@nestJs SMS Body \n @guardians',
-      from: 'whatsapp:+14155238886',
-      to: 'whatsapp:+628179183759',
-      // from: this.configService.get('TWILIO_PHONE_NUMBER_FROM'),
-      // to: this.configService.get('TWILIO_PHONE_NUMBER_TO'),
+      body: '@nestJs whatsapp Body \n @guardians',
+      from: this.configService.get('TWILIO_PHONE_NUMBER_FROM_WA'),
+      to: this.configService.get('TWILIO_PHONE_NUMBER_TO_WA'),
+      // from: this.configService.get('TWILIO_PHONE_NUMBER_FROM_SMS'),
+      // to: this.configService.get('TWILIO_PHONE_NUMBER_TO_SMS'),
     });
   }
 }

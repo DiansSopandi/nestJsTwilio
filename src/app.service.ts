@@ -24,8 +24,10 @@ export class AppService {
   async sendSMS() {
     return this.twilioService.client.messages.create({
       body: '@nestJs SMS Body \n @guardians',
-      from: this.configService.get('TWILIO_PHONE_NUMBER_FROM'),
-      to: this.configService.get('TWILIO_PHONE_NUMBER_TO'),
+      from: 'whatsapp:+14155238886',
+      to: 'whatsapp:+628179183759',
+      // from: this.configService.get('TWILIO_PHONE_NUMBER_FROM'),
+      // to: this.configService.get('TWILIO_PHONE_NUMBER_TO'),
     });
   }
 }
